@@ -17,4 +17,9 @@ public interface CourseRepository {
         return new CourseJdbcRepository(databaseFile);
 
     }
+
+    static CourseRepository openMySqlCourseRepository(String dbschema) {
+        return new MySqlCourseJdbcRepository(dbschema);
+
+    }
 }

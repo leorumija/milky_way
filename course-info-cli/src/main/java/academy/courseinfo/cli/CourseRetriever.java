@@ -33,7 +33,8 @@ public class CourseRetriever {
 
         LOG.info("Retrieving courses for author '{}'", authorId);
         CourseRetrievalService courseRetrievalService = new CourseRetrievalService();
-        CourseRepository courseRepository = CourseRepository.openCourseRepository("./db/course.db");
+        //CourseRepository courseRepository = CourseRepository.openCourseRepository("./db/course.db");
+        CourseRepository courseRepository = CourseRepository.openMySqlCourseRepository("./db/course.db");
         CourseStorageService courseStorageService = new CourseStorageService(courseRepository);
 
         List<PluralsightCourse> coursesToStore = courseRetrievalService.getCoursesFor(authorId)
