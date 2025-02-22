@@ -2,7 +2,9 @@ package academy.courseinfo.cli;
 
 
 import academy.courseinfo.cli.service.CourseRetrievalService;
+import academy.courseinfo.cli.service.CourseStorageService;
 import academy.courseinfo.cli.service.PluralsightCourse;
+import academy.courseinfo.repository.CourseRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -31,13 +33,15 @@ public class CourseRetriever {
 
         LOG.info("Retrieving courses for author '{}'", authorId);
         CourseRetrievalService courseRetrievalService = new CourseRetrievalService();
-        List<PluralsightCourse> coursesToStore = courseRetrievalService.getCoursesFor(authorId);
-               /* .stream()
+        CourseRepository courseRepository = CourseRepository.openCourseRepository("./db/course.db");
+        CourseStorageService courseStorageService = new CourseStorageService(courseRepository);
+
+        List<PluralsightCourse> coursesToStore = courseRetrievalService.getCoursesFor(authorId)
+                .stream()
                 .filter(not(PluralsightCourse::isRetired))
-                .toList();*/
+                .toList();
         LOG.info("Retrieved the following {} courses {}", coursesToStore.size(), coursesToStore);
-      //  courseStorageService.storePluralsightCourses(coursesToStore);
-        coursesToStore.forEach(System.out::println);
+        courseStorageService.storePluralsightCourses(coursesToStore);
         LOG.info("Courses successfully stored");
     }
 }
