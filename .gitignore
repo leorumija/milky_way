@@ -1,0 +1,50 @@
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+### IntelliJ IDEA ###
+.idea/modules.xml
+.idea/jarRepositories.xml
+.idea/compiler.xml
+.idea/libraries/
+*.iws
+*.iml
+*.ipr
+
+### Eclipse ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### VS Code ###
+.vscode/
+
+### Mac OS ###
+.DS_Store
+/.idea/sonarlint/
+/out/artifacts/blog_war_exploded/META-INF/MANIFEST.MF
+.mvn/wrapper/maven-wrapper.jar
+/jee_messaging/.mvn/wrapper/maven-wrapper.jar
+/jee_messaging/.mvn/wrapper/maven-wrapper.properties
+/jee_messaging/mvnw
+/jee_messaging/mvnw.cmd
+/.idea/.gitignore
+/.idea/encodings.xml
+/.idea/material_theme_project_new.xml
+/.idea/misc.xml
+/.idea/vcs.xml

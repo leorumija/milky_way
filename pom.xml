@@ -19,7 +19,7 @@
     <jackson.version>2.13.3</jackson.version>
   </properties>
 
-    <dependencyManagement>
+    <!--<dependencyManagement>-->
         <dependencies>
             <dependency>
                 <groupId>org.slf4j</groupId>
@@ -49,7 +49,7 @@
                 <version>${jackson.version}</version>
             </dependency>
         </dependencies>
-    </dependencyManagement>
+    <!--</dependencyManagement>-->
 
     <build>
         <plugins>
