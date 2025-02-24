@@ -19,11 +19,11 @@ public class CourseStorageService {
 
     public void storePluralsightCourses(List<PluralsightCourse> psCourses) {
         for (PluralsightCourse psCourse : psCourses) {
-            courseRepository.saveCourse(getCourseFrom(psCourse));
+            courseRepository.saveCourse(mapPScourseToCourse(psCourse));
         }
     }
 
-    private static Course getCourseFrom(PluralsightCourse psCourse) {
+    private static Course mapPScourseToCourse(PluralsightCourse psCourse) {
         return new Course(psCourse.id(),
                 psCourse.title(), psCourse.durationInMinutes(),
                 PS_BASE_URL + psCourse.contentUrl(), Optional.empty());
