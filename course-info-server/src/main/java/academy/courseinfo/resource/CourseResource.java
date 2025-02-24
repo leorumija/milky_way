@@ -1,4 +1,4 @@
-package academy.courseinfo.server;
+package academy.courseinfo.resource;
 
 import academy.courseinfo.domain.Course;
 import academy.courseinfo.repository.CourseRepository;
@@ -10,7 +10,6 @@ import org.slf4j.LoggerFactory;
 
 import java.util.List;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 import static java.util.Comparator.comparing;
 

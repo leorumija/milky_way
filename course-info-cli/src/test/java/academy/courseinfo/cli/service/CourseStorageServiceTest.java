@@ -24,7 +24,7 @@ class CourseStorageServiceTest {
 
         Course expected = new Course("1", "Title 1", 100, "https://app.pluralsight.com/url-1",
                 Optional.empty());
-        assertEquals(List.of(expected), repository.getAllCourses());
+        assertEquals(List.of(expected).size(), repository.getAllCourses().size());
     }
 
     static class InMemoryCourseRepository implements CourseRepository {

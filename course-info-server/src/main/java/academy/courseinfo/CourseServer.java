@@ -1,7 +1,7 @@
 package academy.courseinfo;
 
 import academy.courseinfo.repository.CourseRepository;
-import academy.courseinfo.server.CourseResource;
+import academy.courseinfo.resource.CourseResource;
 import org.glassfish.jersey.grizzly2.httpserver.GrizzlyHttpServerFactory;
 import org.glassfish.jersey.server.ResourceConfig;
 import org.slf4j.Logger;
