@@ -34,10 +34,10 @@ class CourseJdbcRepository implements CourseRepository {
     @Override
     public void saveCourse(Course course) {
         executeStatement(INSERT_COURSE, statement -> {
-            statement.setString(1, course.id());
-            statement.setString(2, course.name());
-            statement.setLong(3, course.length());
-            statement.setString(4, course.url());
+            statement.setString(1, course.getId());
+            statement.setString(2, course.getName());
+            statement.setLong(3, course.getLength());
+            statement.setString(4, course.getUrl());
             statement.execute();
         }, "Failed to insert " + course);
     }

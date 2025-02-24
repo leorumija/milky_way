@@ -35,10 +35,10 @@ public class MySqlCourseJdbcRepository implements CourseRepository {
         PreparedStatement statement = null;
         try {
             statement = connection.prepareStatement(INSERT_COURSE);
-            statement.setString(1, course.id());
-            statement.setString(2, course.name());
-            statement.setLong(3, course.length());
-            statement.setString(4, course.url());
+            statement.setString(1, course.getId());
+            statement.setString(2, course.getName());
+            statement.setLong(3, course.getLength());
+            statement.setString(4, course.getUrl());
             statement.executeUpdate();
         } catch (SQLException e) {
 

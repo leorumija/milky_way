@@ -7,10 +7,7 @@ import org.glassfish.jersey.server.ResourceConfig;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.IOException;
-import java.io.InputStream;
 import java.net.URI;
-import java.util.Properties;
 
 public class CourseServer {
     private static final Logger LOG = LoggerFactory.getLogger(CourseServer.class);
