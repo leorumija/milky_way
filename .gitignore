@@ -48,3 +48,4 @@ build/
 /.idea/material_theme_project_new.xml
 /.idea/misc.xml
 /.idea/vcs.xml
+/course-info-server/dependency-reduced-pom.xml
