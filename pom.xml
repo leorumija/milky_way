@@ -19,6 +19,7 @@
         <module>quote-rabbit-library</module>
         <module>register-user-poll-console-application</module>
         <module>register-user-pull-console-application</module>
+        <module>fanout-pub-sub-consumer</module>
     </modules>
 
     <properties>
