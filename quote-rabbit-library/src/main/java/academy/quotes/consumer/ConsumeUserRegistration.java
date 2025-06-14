@@ -15,7 +15,6 @@ public class ConsumeUserRegistration {
 
     public ConsumeUserRegistration(Connection connection) throws IOException {
         channel = connection.createChannel();
-
         channel.queueDeclare(Constants.RegisterUserRoutingKey, false, false, false, null);
     }
 
@@ -27,7 +26,6 @@ public class ConsumeUserRegistration {
                 Thread.sleep(1000);
                 response = channel.basicGet(Constants.RegisterUserRoutingKey, true);
             }
-
             var message = JsonHelpers.fromJson(response.getBody(), UserRegistrationMessage.class);
 
             System.out.println(" [*] Consumed message: " + message);
@@ -35,11 +33,9 @@ public class ConsumeUserRegistration {
         } catch (IOException | InterruptedException e) {
             throw new RuntimeException(e);
         }
-
     }
 
     public void pullMessage() {
-
         DeliverCallback deliverCallback = (consumerTag, delivery) -> {
             String message = new String(delivery.getBody());
 
@@ -54,11 +50,9 @@ public class ConsumeUserRegistration {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-
     }
 
     public void pullMessageWithCallback(DeliverCallback deliverCallback) {
-
         try {
             channel.basicConsume(Constants.RegisterUserRoutingKey, true, deliverCallback, (CancelCallback) null);
         } catch (Exception e) {
