@@ -10,13 +10,12 @@ import com.rabbitmq.client.DeliverCallback;
 import java.io.IOException;
 import java.util.concurrent.TimeoutException;
 
-public class RegisterUserPullConsoleApplication {
+public class RegisterUserPollConsoleApplication {
     static DeliverCallback deliverCallback = (consumerTag, delivery) -> {
         String message = new String(delivery.getBody());
         var mapper = new ObjectMapper();
         var userRegistrationMessage = mapper.readValue(message, UserRegistrationMessage.class);
         System.out.println("Consumed in main : " + userRegistrationMessage);
-        System.out.println("consumerTag : " + consumerTag);
     };
 
     public static void main(String[] args) throws IOException, TimeoutException {
@@ -24,9 +23,7 @@ public class RegisterUserPullConsoleApplication {
         factory.setHost("localhost");
         Connection connection = factory.newConnection();
         ConsumeUserRegistration consumeUserRegistration = new ConsumeUserRegistration(connection);
-
-        consumeUserRegistration.pullMessageWithCallback(deliverCallback);
-       // consumeUserRegistration.pullMessage();
-        //connection.close();
+        consumeUserRegistration.pollQueue();
+       // connection.close();
     }
 }

@@ -17,6 +17,7 @@
         <module>course-info-server</module>
         <module>rest-service</module>
         <module>quote-rabbit-library</module>
+        <module>register-user-poll-console-application</module>
         <module>register-user-pull-console-application</module>
     </modules>
 
