@@ -17,6 +17,7 @@ public class Application {
             connection = connectionFactory.newConnection("app:rest");
 
             app.post("/users", UserController.registerUser);
+            app.post("/fanoutquotes", FanOutQuotesController.getQuotes);
         } catch (Exception e) {
             System.out.println(" [x] Unable to start connection to RabbitMQ");
             System.out.println(e.getCause().getMessage());

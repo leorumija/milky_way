@@ -6,4 +6,5 @@ public final class Constants {
 
     public static final String DefaultExchange = "";
     public static final String RegisterUserRoutingKey = "users";
+    public static final String QuotesExchange = "quotes_exchange";
 }
